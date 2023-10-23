@@ -1,9 +1,9 @@
 import React from "react";
 import Match from "./Match";
 import Spacer from "./Spacer";
-import { Match as MatchType } from "@/pages/models/types";
+import { Match as MatchType } from "@/models/types";
 
-const Round = ({
+export default function Round({
   lastRound,
   firstRound,
   matches,
@@ -13,7 +13,7 @@ const Round = ({
   firstRound: boolean;
   matches: MatchType[];
   round: number;
-}) => {
+}) {
   const matchElements: JSX.Element[] = [];
   if (!firstRound && !lastRound) {
     matchElements.push(<Spacer key={`${round}-fs`} />);
@@ -36,6 +36,4 @@ const Round = ({
     matchElements.push(<Spacer key={`${round}-ls`} />);
   }
   return <div className="bracket-round">{matchElements}</div>;
-};
-
-export default Round;
+}

@@ -1,4 +1,4 @@
-import Bracket from "./components/Bracket";
+import Bracket from "../components/Bracket";
 
 export default function Home() {
   return (

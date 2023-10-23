@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import HighlightContext from "../context/HighlightContext";
+import React from "react";
+import { useHighlightStore } from "@/store/highlightStore";
 
 const Player = ({
   id,
@@ -14,8 +14,7 @@ const Player = ({
   score: number;
   winner: boolean;
 }) => {
-  const { highlightedPlayer, setHighlightedPlayer } =
-    useContext(HighlightContext);
+  const { highlightedPlayer, setHighlightedPlayer } = useHighlightStore();
   return (
     <div
       onMouseEnter={() => setHighlightedPlayer(id)}

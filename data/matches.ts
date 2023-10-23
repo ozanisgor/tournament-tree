@@ -1,4 +1,4 @@
-import { Match } from "@/pages/models/types";
+import { Match } from "@/models/types";
 
 export const matches: Match[] = [
   {

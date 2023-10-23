@@ -3,9 +3,21 @@ interface Round {
   matches: Match[];
 }
 
-import { Match } from "../models/types";
+type Match = {
+  id: number;
+  round: number;
+  match: number;
+  players: Player[];
+  score: number[];
+};
 
-export default function convertMatchesToRounds(matches: Match[]): Round[] {
+export type Player = {
+  id: number;
+  name: string;
+  seed: number;
+};
+
+export const convertMatchesToRounds = function (matches: Match[]): Round[] {
   const roundsObject: Record<number, Round> = {};
   matches.forEach((match) => {
     const { round } = match;
@@ -16,4 +28,4 @@ export default function convertMatchesToRounds(matches: Match[]): Round[] {
   });
   const rounds = Object.values(roundsObject).sort((a, b) => a.round - b.round);
   return rounds;
-}
+};

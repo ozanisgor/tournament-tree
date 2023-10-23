@@ -1,8 +1,13 @@
 import React from "react";
 import Player from "./Player";
-import { Player as PlayerType } from "../models/types";
 
-const Match = ({
+type PlayerType = {
+  id: number;
+  name: string;
+  seed: number;
+};
+
+export default function Match({
   players,
   id,
   score,
@@ -10,7 +15,7 @@ const Match = ({
   players: PlayerType[];
   id: number;
   score: number[];
-}) => {
+}) {
   const winnerIdx = score[0] > score[1] ? 0 : 1;
   return (
     <div className="bracket-match">
@@ -29,6 +34,4 @@ const Match = ({
       </div>
     </div>
   );
-};
-
-export default Match;
+}
