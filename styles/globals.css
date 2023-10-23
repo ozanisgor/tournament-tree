@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #464242;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.bracket {
+  overflow: auto;
+  .bracket-rounds {
+    display: flex;
+  }
+  .bracket-round-headers {
+    margin-bottom: 1rem;
+    display: flex;
+    color: White;
+  }
+}
+
+.bracket-connectors {
+  display: flex;
+}
+
+.bracket-connector {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 4rem;
+}
+
+.bracket-horizontal-line {
+  border: solid 1px #ccc;
+}
+
+.bracket-match {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: row;
+  .bracket-match-id {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 2rem;
+    font-weight: bold;
+    color: #999;
+  }
+  .bracket-players {
+    width: 20rem;
+  }
+}
+
+.bracket-player {
+  padding: 0.5rem 0;
+  background: #f6f6f6;
+  border-left: solid 0.2rem #999;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+  display: flex;
+  justify-content: space-between;
+  .bracket-player-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: left;
+    flex: 1 1 auto;
+    color: #999;
+  }
+  .bracket-player-seed,
+  .bracket-player-score {
+    flex: 0 0 auto;
+    padding: 0 1rem;
+    color: #999;
+    min-width: 50px;
+  }
+  &.bracket-highlighted {
+    background-color: #255d85;
+    color: white;
+    border-left: solid 0.2rem #1d8cd6;
+    .bracket-player-seed,
+    .bracket-player-score,
+    .bracket-player-name {
+      color: white;
+    }
+  }
+  &:first-child {
+    border-bottom: solid 1px #ccc;
+  }
+}
+
+.bracket-winner {
+  background-color: #feffdd;
+  border-left: solid 0.2rem rgb(15, 172, 15);
+  .bracket-player-score {
+    font-weight: bold;
+    color: rgb(15, 172, 15);
+  }
+  .bracket-player-name {
+    color: #333;
+  }
+  &.bracket-highlighted {
+    .bracket-player-score {
+      color: rgb(142, 233, 142);
+    }
+    .bracket-player-name {
+      color: white;
+    }
+  }
+}
+
+.bracket-round {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bracket-round-header {
+  width: 20rem;
+  margin-right: 8rem;
+  padding: 0.2rem 0;
+  font-size: 120%;
+  font-weight: bold;
+  margin-left: 2rem;
+  &.bracket-last-round {
+    margin-right: 0;
+  }
+}
+
+.bracket-spacer {
+  flex-grow: 0.5;
+}
+
+.bracket-vertical-line {
+  border-right: solid 1px #ccc;
+}
