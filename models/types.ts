@@ -11,3 +11,8 @@ export type Player = {
   name: string;
   seed: number;
 };
+
+export interface Round {
+  round: number;
+  matches: Match[];
+}

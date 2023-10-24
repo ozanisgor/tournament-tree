@@ -1,11 +1,6 @@
 import React from "react";
 import Player from "./Player";
-
-type PlayerType = {
-  id: number;
-  name: string;
-  seed: number;
-};
+import { Player as PlayerType } from "../models/types";
 
 export default function Match({
   players,
