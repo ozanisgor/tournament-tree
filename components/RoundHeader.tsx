@@ -2,7 +2,7 @@ import React from "react";
 
 const getRoundHeaderText = (round: number, totalRounds: number) => {
   if (round === totalRounds) {
-    return "Finals";
+    return "Final";
   }
   if (round === totalRounds - 1) {
     return "Semi-finals";
