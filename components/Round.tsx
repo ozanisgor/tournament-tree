@@ -28,6 +28,7 @@ export default function Round({
         score={match.score}
         id={match.id}
         players={match.players}
+        lastRound={lastRound}
       />
     );
     return matchElements;
