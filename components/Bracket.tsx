@@ -3,18 +3,15 @@ import RoundHeader from "./RoundHeader";
 import Round from "./Round";
 import Connector from "./Connector";
 import { matches } from "@/data/matches";
-import Image from "next/image";
-import cup from "@/public/images/cup.png";
-import { useChampion } from "@/store/champion";
+import Champion from "./Champion";
 
 export default function Bracket() {
   const rounds = convertMatchesToRounds(matches);
-  const { champion } = useChampion();
 
   return (
-    <div className="overflow-auto max-w-7xl relative">
+    <div className="relative">
       <div className="flex flex-col gap-5">
-        <div className="flex text-white absolute">
+        <div className="flex text-white absolute mx-10 text-center">
           {rounds.map((round) => (
             <RoundHeader
               key={`${round}-header-${round.round}}`}
@@ -23,7 +20,7 @@ export default function Bracket() {
             />
           ))}
         </div>
-        <div className="flex mt-10">
+        <div className="flex justify-center mx-10 my-20">
           {rounds.map((round, index) => {
             const roundNumber = rounds.length - index;
 
@@ -43,11 +40,7 @@ export default function Bracket() {
               />,
             ];
           })}
-          <div className="flex flex-col items-center justify-center ml-10 gap-3">
-            <h3 className="text-white">Champion</h3>
-            <Image src={cup} alt="cup" width={150} height={150} className="" />
-            <p className="text-white">{champion?.name}</p>
-          </div>
+          <Champion />
         </div>
       </div>
     </div>
