@@ -35,7 +35,7 @@ export const matches: Match[] = [
         seed: 15,
       },
     ],
-    score: [0, 1],
+    score: [0, 3],
   },
   {
     id: 3,
@@ -89,7 +89,7 @@ export const matches: Match[] = [
         seed: 12,
       },
     ],
-    score: [0, 1],
+    score: [2, 3],
   },
   {
     id: 6,
@@ -107,7 +107,7 @@ export const matches: Match[] = [
         seed: 11,
       },
     ],
-    score: [1, 0],
+    score: [4, 2],
   },
   {
     id: 7,
@@ -125,7 +125,7 @@ export const matches: Match[] = [
         seed: 10,
       },
     ],
-    score: [0, 1],
+    score: [1, 3],
   },
   {
     id: 8,
@@ -143,7 +143,7 @@ export const matches: Match[] = [
         seed: 9,
       },
     ],
-    score: [0, 1],
+    score: [2, 0],
   },
   {
     id: 9,
