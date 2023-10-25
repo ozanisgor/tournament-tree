@@ -87,7 +87,7 @@ body {
     min-width: 50px;
   }
   &.bracket-highlighted {
-    background-color: #255d85;
+    background-color: #eac700;
     color: white;
     border-left: solid 0.2rem #1d8cd6;
     .bracket-player-seed,
@@ -102,7 +102,7 @@ body {
 }
 
 .bracket-winner {
-  background-color: #feffdd;
+  background-color: #d8ffeb;
   border-left: solid 0.2rem rgb(15, 172, 15);
   .bracket-player-score {
     font-weight: bold;

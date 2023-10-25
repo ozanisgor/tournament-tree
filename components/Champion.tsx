@@ -17,7 +17,7 @@ export default function Champion() {
 
   return (
     <div className="flex flex-col items-center justify-center mx-10 gap-4 w-52">
-      <h3 className="text-white">Champion</h3>
+      <h3 className="text-white text-3xl font-semibold">Champion</h3>
 
       <motion.div
         transition={BounceTransition}
@@ -27,7 +27,7 @@ export default function Champion() {
       >
         <Image src={cup} alt="cup" width={200} height={200} />
       </motion.div>
-      <p className="text-white">{champion?.name}</p>
+      <p className="text-white text-lg">{champion?.name}</p>
     </div>
   );
 }
