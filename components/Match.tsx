@@ -11,11 +11,22 @@ export default function Match({
 }: {
   players: PlayerType[];
   id: number;
-  score: number[];
+  score: number[][];
   lastRound: boolean;
 }) {
   const { champion, setChampion } = useChampion();
-  const winnerIdx = score[0] > score[1] ? 0 : 1;
+
+  let wins = [0, 0];
+
+  for (let i = 0; i < score.length; i++) {
+    if (score[i][0] > score[i][1]) {
+      wins[0]++;
+    } else {
+      wins[1]++;
+    }
+  }
+
+  const winnerIdx = wins[0] > wins[1] ? 0 : 1;
 
   useEffect(() => {
     if (!lastRound && champion !== players[winnerIdx]) {
@@ -33,7 +44,7 @@ export default function Match({
             id={player.id}
             name={name}
             seed={seed}
-            score={score[index]}
+            score={score.map((s) => s[index])}
             winner={index === winnerIdx}
           />
         ))}

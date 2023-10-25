@@ -36,5 +36,6 @@ export default function Round({
   if (!firstRound && !lastRound) {
     matchElements.push(<Spacer key={`${round}-ls`} />);
   }
+
   return <div className="bracket-round">{matchElements}</div>;
 }

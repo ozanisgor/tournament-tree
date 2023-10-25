@@ -3,7 +3,7 @@ export type Match = {
   round: number;
   match: number;
   players: Player[];
-  score: number[];
+  score: number[][];
 };
 
 export type Player = {
