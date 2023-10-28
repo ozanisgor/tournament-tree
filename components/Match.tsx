@@ -35,9 +35,9 @@ export default function Match({
   }, [lastRound, winnerIdx]);
 
   return (
-    <div className="bracket-match">
+    <div className={`bracket-match`}>
       <div className="bracket-match-id">{id}</div>
-      <div className="bracket-players">
+      <div className={`bracket-players`}>
         {players.map(({ name, seed, ...player }, index) => (
           <Player
             key={player.id}
@@ -46,6 +46,7 @@ export default function Match({
             seed={seed}
             score={score.map((s) => s[index])}
             winner={index === winnerIdx}
+            wins={wins[index]}
           />
         ))}
       </div>

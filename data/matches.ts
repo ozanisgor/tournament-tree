@@ -315,6 +315,28 @@ export const matches: Match[] = [
     match: 1,
     players: [
       {
+        id: 10,
+        name: "TEAM L",
+        seed: 12,
+      },
+      {
+        id: 5,
+        name: "TEAM C",
+        seed: 3,
+      },
+    ],
+    score: [
+      [1, 2],
+      [0, 1],
+      [3, 1],
+    ],
+  },
+  {
+    id: 16,
+    round: 4,
+    match: 2,
+    players: [
+      {
         id: 4,
         name: "TEAM O",
         seed: 15,
