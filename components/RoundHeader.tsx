@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const getRoundHeaderText = (round: number, totalRounds: number) => {
   if (round === totalRounds) {
@@ -19,12 +20,18 @@ const RoundHeader = ({
   round: number;
   totalRounds: number;
 }) => (
-  <div
+  <motion.div
     className={`bracket-round-header
     ${round === totalRounds ? "bracket-last-round" : ""}`}
+    initial={{ opacity: 0, y: 50 }}
+    animate={{
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.5 * round },
+    }}
   >
     {getRoundHeaderText(round, totalRounds)}
-  </div>
+  </motion.div>
 );
 
 export default RoundHeader;

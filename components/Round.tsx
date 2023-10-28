@@ -2,20 +2,26 @@ import React from "react";
 import Match from "./Match";
 import Spacer from "./Spacer";
 import { Match as MatchType } from "@/models/types";
+import { motion } from "framer-motion";
 
 export default function Round({
   lastRound,
   firstRound,
   matches,
   round,
+  totalRounds,
 }: {
   lastRound: boolean;
   firstRound: boolean;
   matches: MatchType[];
   round: number;
+  totalRounds: number;
 }) {
   const matchElements: JSX.Element[] = [];
   const consolation: JSX.Element[] = [];
+
+  // to start animation from the first round
+  const reverseRound = totalRounds - round;
 
   if (!firstRound && !lastRound) {
     matchElements.push(<Spacer key={`${round}-fs`} />);
@@ -72,11 +78,17 @@ export default function Round({
         <div className={`bracket-round relative`}>
           {matchElements}
           <div className={`bottom-20 absolute`}>
-            <div
+            <motion.div
               className={`bracket-round-header bracket-last-round text-white text-center`}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { delay: 0.5 * round },
+              }}
             >
               Consolation Round
-            </div>
+            </motion.div>
             {consolation}
           </div>
         </div>

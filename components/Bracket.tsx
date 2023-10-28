@@ -29,6 +29,7 @@ export default function Bracket() {
                 <Connector
                   key={`${roundNumber}-c-${index}`}
                   round={roundNumber}
+                  totalRounds={rounds.length}
                 />
               ),
               <Round
@@ -37,6 +38,7 @@ export default function Bracket() {
                 lastRound={index === 0}
                 matches={round.matches}
                 round={round.round}
+                totalRounds={rounds.length}
               />,
             ];
           })}
