@@ -20,9 +20,6 @@ export default function Round({
   const matchElements: JSX.Element[] = [];
   const consolation: JSX.Element[] = [];
 
-  // to start animation from the first round
-  const reverseRound = totalRounds - round;
-
   if (!firstRound && !lastRound) {
     matchElements.push(<Spacer key={`${round}-fs`} />);
   }
@@ -36,7 +33,7 @@ export default function Round({
         score={firstMatch.score}
         id={firstMatch.id}
         players={firstMatch.players}
-        lastRound={lastRound}
+        firstRound={firstRound}
       />
     );
     consolation.push(
@@ -45,7 +42,6 @@ export default function Round({
         score={matches[0].score}
         id={matches[0].id}
         players={matches[0].players}
-        lastRound={lastRound}
       />
     );
   } else {
@@ -60,7 +56,6 @@ export default function Round({
           score={match.score}
           id={match.id}
           players={match.players}
-          lastRound={lastRound}
         />
       );
     });

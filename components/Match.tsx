@@ -8,12 +8,12 @@ export default function Match({
   players,
   id,
   score,
-  lastRound,
+  firstRound,
 }: {
   players: PlayerType[];
   id: number;
   score: number[][];
-  lastRound: boolean;
+  firstRound?: boolean;
 }) {
   const { champion, setChampion } = useChampion();
 
@@ -30,10 +30,10 @@ export default function Match({
   const winnerIdx = wins[0] > wins[1] ? 0 : 1;
 
   useEffect(() => {
-    if (!lastRound && champion !== players[winnerIdx]) {
+    if (firstRound && champion !== players[winnerIdx]) {
       setChampion(players[winnerIdx]);
     }
-  }, [lastRound, winnerIdx]);
+  }, [firstRound, winnerIdx]);
 
   return (
     <motion.div

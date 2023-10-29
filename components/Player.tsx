@@ -20,7 +20,9 @@ const Player = ({
 
   return (
     <div
-      onMouseEnter={() => setHighlightedPlayer(id)}
+      onMouseEnter={() => {
+        setHighlightedPlayer(id);
+      }}
       onMouseLeave={() => setHighlightedPlayer(null)}
       title={`${name} ${winner ? "(W)" : "(L)"}`}
       className={`bracket-player
@@ -31,12 +33,14 @@ const Player = ({
         {seed}
       </div>
       <div className="bracket-player-name">{name}</div>
+
       {/* Scores of 3 matches */}
       {/* {score.map((s, idx) => (
         <div key={`${s}-${idx}`} title="Score" className="bracket-player-score">
           {s}
         </div>
       ))} */}
+
       <div className="bracket-player-score">{wins}</div>
     </div>
   );
