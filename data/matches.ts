@@ -17,7 +17,11 @@ export const matches: Match[] = [
         seed: 16,
       },
     ],
-    score: [0, 1],
+    score: [
+      [3, 2],
+      [4, 3],
+      [5, 7],
+    ],
   },
   {
     id: 2,
@@ -35,7 +39,11 @@ export const matches: Match[] = [
         seed: 15,
       },
     ],
-    score: [0, 3],
+    score: [
+      [2, 2],
+      [1, 3],
+      [0, 2],
+    ],
   },
   {
     id: 3,
@@ -53,7 +61,11 @@ export const matches: Match[] = [
         seed: 14,
       },
     ],
-    score: [1, 0],
+    score: [
+      [1, 0],
+      [2, 1],
+      [0, 1],
+    ],
   },
   {
     id: 4,
@@ -71,7 +83,11 @@ export const matches: Match[] = [
         seed: 13,
       },
     ],
-    score: [1, 0],
+    score: [
+      [2, 0],
+      [0, 1],
+      [1, 3],
+    ],
   },
   {
     id: 5,
@@ -89,7 +105,11 @@ export const matches: Match[] = [
         seed: 12,
       },
     ],
-    score: [2, 3],
+    score: [
+      [1, 2],
+      [0, 1],
+      [3, 1],
+    ],
   },
   {
     id: 6,
@@ -107,7 +127,11 @@ export const matches: Match[] = [
         seed: 11,
       },
     ],
-    score: [4, 2],
+    score: [
+      [1, 3],
+      [0, 1],
+      [2, 1],
+    ],
   },
   {
     id: 7,
@@ -125,7 +149,11 @@ export const matches: Match[] = [
         seed: 10,
       },
     ],
-    score: [1, 3],
+    score: [
+      [1, 0],
+      [2, 1],
+      [0, 3],
+    ],
   },
   {
     id: 8,
@@ -143,7 +171,11 @@ export const matches: Match[] = [
         seed: 9,
       },
     ],
-    score: [2, 0],
+    score: [
+      [4, 0],
+      [0, 2],
+      [3, 1],
+    ],
   },
   {
     id: 9,
@@ -161,7 +193,11 @@ export const matches: Match[] = [
         seed: 15,
       },
     ],
-    score: [0, 1],
+    score: [
+      [1, 3],
+      [0, 2],
+      [3, 1],
+    ],
   },
   {
     id: 10,
@@ -179,7 +215,11 @@ export const matches: Match[] = [
         seed: 4,
       },
     ],
-    score: [2, 0],
+    score: [
+      [1, 2],
+      [3, 1],
+      [0, 3],
+    ],
   },
   {
     id: 11,
@@ -197,7 +237,11 @@ export const matches: Match[] = [
         seed: 6,
       },
     ],
-    score: [3, 0],
+    score: [
+      [2, 0],
+      [1, 2],
+      [0, 1],
+    ],
   },
   {
     id: 12,
@@ -215,7 +259,11 @@ export const matches: Match[] = [
         seed: 8,
       },
     ],
-    score: [0, 1],
+    score: [
+      [1, 3],
+      [0, 2],
+      [0, 1],
+    ],
   },
   {
     id: 13,
@@ -233,7 +281,11 @@ export const matches: Match[] = [
         seed: 15,
       },
     ],
-    score: [0, 1],
+    score: [
+      [1, 2],
+      [0, 1],
+      [3, 1],
+    ],
   },
   {
     id: 14,
@@ -251,12 +303,38 @@ export const matches: Match[] = [
         seed: 8,
       },
     ],
-    score: [0, 1],
+    score: [
+      [1, 2],
+      [0, 1],
+      [4, 1],
+    ],
   },
   {
     id: 15,
     round: 4,
     match: 1,
+    players: [
+      {
+        id: 10,
+        name: "TEAM L",
+        seed: 12,
+      },
+      {
+        id: 5,
+        name: "TEAM C",
+        seed: 3,
+      },
+    ],
+    score: [
+      [1, 2],
+      [0, 1],
+      [3, 1],
+    ],
+  },
+  {
+    id: 16,
+    round: 4,
+    match: 2,
     players: [
       {
         id: 4,
@@ -269,6 +347,10 @@ export const matches: Match[] = [
         seed: 8,
       },
     ],
-    score: [0, 1],
+    score: [
+      [4, 0],
+      [0, 1],
+      [3, 1],
+    ],
   },
 ];

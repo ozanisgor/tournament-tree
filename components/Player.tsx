@@ -7,14 +7,17 @@ const Player = ({
   seed,
   score,
   winner,
+  wins,
 }: {
   id: number;
   name: string;
   seed: number;
-  score: number;
+  score: number[];
   winner: boolean;
+  wins: number;
 }) => {
   const { highlightedPlayer, setHighlightedPlayer } = useHighlightStore();
+
   return (
     <div
       onMouseEnter={() => setHighlightedPlayer(id)}
@@ -28,9 +31,13 @@ const Player = ({
         {seed}
       </div>
       <div className="bracket-player-name">{name}</div>
-      <div title="Score" className="bracket-player-score">
-        {score}
-      </div>
+      {/* Scores of 3 matches */}
+      {/* {score.map((s, idx) => (
+        <div key={`${s}-${idx}`} title="Score" className="bracket-player-score">
+          {s}
+        </div>
+      ))} */}
+      <div className="bracket-player-score">{wins}</div>
     </div>
   );
 };

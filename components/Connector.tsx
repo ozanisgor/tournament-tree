@@ -1,12 +1,22 @@
 import React from "react";
 import Spacer from "./Spacer";
+import { motion } from "framer-motion";
 
-const Connector = ({ round }: { round: number }) => {
+const Connector = ({
+  round,
+  totalRounds,
+}: {
+  round: number;
+  totalRounds: number;
+}) => {
   const rightLines = 2 ** (round - 1);
   const leftLines = 2 ** round;
 
   const rightElements = [];
   const leftElements = [];
+
+  // to start animation from the first round
+  const reverseRound = totalRounds - round;
 
   for (let i = 0; i < rightLines; i += 1) {
     if (i > 0) {
@@ -29,7 +39,15 @@ const Connector = ({ round }: { round: number }) => {
   }
 
   return (
-    <div className="bracket-connectors">
+    <motion.div
+      className="bracket-connectors"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: { delay: 0.5 * reverseRound },
+      }}
+    >
       <div data-test="connector-left" className="bracket-connector">
         <Spacer key={`${round}-l-t`} />
         {leftElements}
@@ -40,7 +58,7 @@ const Connector = ({ round }: { round: number }) => {
         {rightElements}
         <Spacer key={`${round}-r-b`} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
