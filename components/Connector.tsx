@@ -9,21 +9,22 @@ const Connector = ({
   round: number;
   totalRounds: number;
 }) => {
+  // to start animation from the first round
+  const reverseRound = totalRounds - round;
+
   const rightLines = 2 ** (round - 1);
   const leftLines = 2 ** round;
 
   const rightElements = [];
   const leftElements = [];
 
-  // to start animation from the first round
-  const reverseRound = totalRounds - round;
-
   for (let i = 0; i < rightLines; i += 1) {
     if (i > 0) {
       rightElements.push(<Spacer key={`${round}-${i}-s`} height={2} />);
     }
+
     rightElements.push(
-      <div key={`${round}-${i}-l`} className="bracket-horizontal-line" />
+      <div key={`${round}-${i}-l`} className={`bracket-horizontal-line`} />
     );
   }
 

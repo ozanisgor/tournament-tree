@@ -1,5 +1,7 @@
 import React from "react";
 import { useHighlightStore } from "@/store/highlightStore";
+import { useChampion } from "@/store/champion";
+import { Trophy } from "lucide-react";
 
 const Player = ({
   id,
@@ -17,6 +19,7 @@ const Player = ({
   wins: number;
 }) => {
   const { highlightedPlayer, setHighlightedPlayer } = useHighlightStore();
+  const { champion } = useChampion();
 
   return (
     <div
@@ -33,6 +36,9 @@ const Player = ({
         {seed}
       </div>
       <div className="bracket-player-name">{name}</div>
+      {champion && champion.id === id && (
+        <Trophy color="#c9a01d" width={18} height={18} />
+      )}
 
       {/* Scores of 3 matches */}
       {/* {score.map((s, idx) => (
