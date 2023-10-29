@@ -56,6 +56,7 @@ export default function Round({
           score={match.score}
           id={match.id}
           players={match.players}
+          match={match}
         />
       );
     });

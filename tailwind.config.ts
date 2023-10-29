@@ -9,6 +9,6 @@ const config: Config = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@headlessui/tailwindcss")],
 };
 export default config;

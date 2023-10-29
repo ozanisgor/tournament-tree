@@ -37,7 +37,7 @@ const Player = ({
       </div>
       <div className="bracket-player-name">{name}</div>
       {champion && champion.id === id && (
-        <Trophy color="#c9a01d" width={18} height={18} />
+        <Trophy color="#c9a01d" width={17} height={17} />
       )}
 
       {/* Scores of 3 matches */}
