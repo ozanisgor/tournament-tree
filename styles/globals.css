@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #0f1519;
+  background-color: #131b20;
   color: #fff;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 .bracket-horizontal-line {
-  border: solid 1px #ccc;
+  border: solid 1px #999;
 }
 
 .bracket-spacer {
@@ -51,7 +51,7 @@ body {
 }
 
 .bracket-vertical-line {
-  border-right: solid 1px #ccc;
+  border-right: solid 1px #999;
 }
 
 .bracket-match {
@@ -99,7 +99,7 @@ body {
   &.bracket-highlighted {
     background-color: #c9a01d;
     color: white;
-    border-left: solid 0.2rem #1d8cd6;
+    border-left: solid 0.2rem #fff;
     .bracket-player-seed,
     .bracket-player-score,
     .bracket-player-name {
@@ -107,7 +107,8 @@ body {
     }
   }
   &:first-child {
-    border-bottom: solid 1px #ccc;
+    border-bottom: solid 2px #999;
+    border-bottom-right-radius: 0;
   }
 }
 

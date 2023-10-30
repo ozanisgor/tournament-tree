@@ -6,11 +6,9 @@ import { Match as MatchType } from "@/models/types";
 
 export default function Home({ matches }: { matches: MatchType[] }) {
   return (
-    <>
-      <div className="overflow-x-scroll max-w-8xl flex mx-auto mt-5">
-        <Bracket matches={matches} />
-      </div>
-    </>
+    <div className="overflow-x-scroll max-w-screen-2xl flex mx-auto pt-5">
+      <Bracket matches={matches} />
+    </div>
   );
 }
 

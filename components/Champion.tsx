@@ -17,7 +17,7 @@ export default function Champion() {
   const { champion } = useChampion();
 
   return (
-    <div className="flex flex-col items-center justify-center mx-10 gap-4 w-52 relative">
+    <div className="flex flex-col items-center justify-center mx-10 gap-4 w-52 relative -mt-10">
       <Confetti
         width={208}
         height={500}

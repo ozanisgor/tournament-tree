@@ -6,7 +6,7 @@ const Spacer = ({ line, height }: { line: boolean; height: number }) => {
     spacers.push(
       <div
         key={i}
-        className={`bracket-spacer ${line ? "border-r border-[#cccccc]" : ""}`}
+        className={`bracket-spacer ${line ? "border-r border-[#999]" : ""}`}
       >
         &nbsp;
       </div>

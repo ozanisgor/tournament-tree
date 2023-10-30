@@ -10,11 +10,11 @@ function classNames(...classes: string[]) {
 export default function Navigation() {
   return (
     <>
-      <div className="mx-auto px-2 sm:px-6 lg:px-8 border-b border-gray-400 bg-black">
-        <div className="relative flex h-16 items-center justify-between">
+      <div className="mx-auto px-2 sm:px-6 lg:px-8 border-b border-[#19222d] bg-black">
+        <div className="relative flex h-16 items-center justify-between max-w-screen-2xl mx-auto">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden"></div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="hidden sm:ml-6 sm:block">
+            <div className="sm:ml-6">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
                   <a

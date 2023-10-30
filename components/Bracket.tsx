@@ -11,7 +11,7 @@ export default function Bracket({ matches }: { matches: MatchType[] }) {
   return (
     <div className="relative">
       <div className="flex flex-col gap-5">
-        <div className="flex text-white absolute mx-10 text-center ">
+        <div className="flex text-white absolute mx-10 text-center">
           {rounds.map((round) => (
             <RoundHeader
               key={`${round}-header-${round.round}}`}
@@ -20,7 +20,7 @@ export default function Bracket({ matches }: { matches: MatchType[] }) {
             />
           ))}
         </div>
-        <div className="flex justify-center px-1 md:px-5 my-20 border-t border-gray-200">
+        <div className="flex justify-center px-1 md:px-5 my-20 py-10 border-t border-gray-700">
           {rounds.map((round, index) => {
             const roundNumber = rounds.length - index;
 

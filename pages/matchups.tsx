@@ -34,7 +34,7 @@ export default function Matchups({ matches }: { matches: MatchType[] }) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto grid grid-cols-1 gap-3 py-10 px-1">
+    <div className="max-w-screen-2xl mx-auto grid grid-cols-1 gap-3 py-10 px-1">
       {rounds.map((round) => (
         <div key={round.round} className="grid grid-cols-1 gap-4 py-5">
           <div className="pl-3">
@@ -43,7 +43,7 @@ export default function Matchups({ matches }: { matches: MatchType[] }) {
           {round.matches.map((match) => (
             <div
               key={`${match.players[0].name}-${match.players[1].name}`}
-              className="w-full h-28 rounded-xl px-0 md:px-4 py-5 cursor-pointer bg-[#19222d]"
+              className="w-full h-28 rounded-xl px-0 md:px-4 py-5 bg-[#19222d]"
             >
               <div className="grid auto-rows-[70px] grid-cols-[90px,1fr,120px] items-center text-center gap-2 md:gap-3">
                 <div className="text-xs md:text-lg ">
@@ -54,7 +54,7 @@ export default function Matchups({ matches }: { matches: MatchType[] }) {
                     : `Matchup ${match.match}`}
                 </div>
                 <div className="grid auto-cols-[70px] grid-cols-[1fr,auto,1fr] items-center gap-2 md:gap-3">
-                  <div className="text-right text-sm md:text-2xl">
+                  <div className="text-center sm:text-right text-sm md:text-2xl">
                     {match.players[0].name}
                   </div>
                   <div className="min-w-[90px] grid grid-cols-3 items-center">
@@ -86,7 +86,7 @@ export default function Matchups({ matches }: { matches: MatchType[] }) {
                         : "L"}
                     </div>
                   </div>
-                  <div className="text-left text-sm md:text-2xl">
+                  <div className="text-center sm:text-left text-sm md:text-2xl">
                     {match.players[1].name}
                   </div>
                 </div>
