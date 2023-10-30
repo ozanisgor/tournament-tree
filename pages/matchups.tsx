@@ -1,11 +1,11 @@
 import LandingLayout from "@/components/LandingLayout";
 import { ReactElement } from "react";
-import { matches } from "@/data/matches";
 import { convertMatchesToRounds } from "@/utils/convertMatchesToRounds";
+import { getLocalData } from "@/utils/localdata";
+import { Match as MatchType } from "@/models/types";
 
-export default function Matchups() {
+export default function Matchups({ matches }: { matches: MatchType[] }) {
   const rounds = convertMatchesToRounds(matches);
-  console.log(rounds);
 
   const getRoundHeaderText = (round: number, totalRounds: number) => {
     if (round === totalRounds) {
@@ -118,6 +118,14 @@ export default function Matchups() {
       ))}
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const matches = await getLocalData();
+
+  return {
+    props: { matches },
+  };
 }
 
 Matchups.getLayout = function getLayout(page: ReactElement) {

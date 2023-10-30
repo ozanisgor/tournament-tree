@@ -2,10 +2,10 @@ import { convertMatchesToRounds } from "../utils/convertMatchesToRounds";
 import RoundHeader from "./RoundHeader";
 import Round from "./Round";
 import Connector from "./Connector";
-import { matches } from "@/data/matches";
 import Champion from "./Champion";
+import { Match as MatchType } from "../models/types";
 
-export default function Bracket() {
+export default function Bracket({ matches }: { matches: MatchType[] }) {
   const rounds = convertMatchesToRounds(matches);
 
   return (
