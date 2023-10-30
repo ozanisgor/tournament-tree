@@ -34,6 +34,7 @@ export default function Round({
         id={firstMatch.id}
         players={firstMatch.players}
         firstRound={firstRound}
+        match={firstMatch}
       />
     );
     consolation.push(
@@ -42,6 +43,7 @@ export default function Round({
         score={matches[0].score}
         id={matches[0].id}
         players={matches[0].players}
+        match={matches[0]}
       />
     );
   } else {
