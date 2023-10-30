@@ -21,7 +21,7 @@ const RoundHeader = ({
   totalRounds: number;
 }) => (
   <motion.div
-    className={`bracket-round-header
+    className={`bracket-round-header flex flex-col
     ${round === totalRounds ? "bracket-last-round" : ""}`}
     initial={{ opacity: 0, y: 50 }}
     animate={{
@@ -31,6 +31,7 @@ const RoundHeader = ({
     }}
   >
     {getRoundHeaderText(round, totalRounds)}
+    <span className="text-xs font-normal">(Best of 3)</span>
   </motion.div>
 );
 
