@@ -102,7 +102,7 @@ export default function Match({
                 <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-black text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-3xl text-center font-medium leading-6 text-white py-5 border-b border-[#0f1519] bg-[#0a0e13] w-full"
+                    className="text-3xl text-center font-medium leading-6 text-white py-5 border-b border-[#0f1519] bg-[#19222d] w-full"
                   >
                     Match Details
                   </Dialog.Title>
@@ -137,7 +137,7 @@ export default function Match({
                       <div className="text-4xl">{players[1].name}</div>
                     </div>
                     <div className="pb-10">
-                      <div className="text-center text-xl p-5 border-b border-[#0f1519] bg-[#0a0e13]">
+                      <div className="text-center text-xl p-5 border-b border-[#0f1519] bg-[#19222d]">
                         Games
                       </div>
                       <div className=" text-center items-center py-5 pt-10">
@@ -147,13 +147,27 @@ export default function Match({
                               key={idx}
                               className="grid grid-cols-3 px-10 items-center"
                             >
-                              <div className="col-start-1">Game {idx + 1}</div>
+                              <div className="col-start-1 text-gray-300">
+                                Game {idx + 1}
+                              </div>
                               <div className="col-start-2 grid grid-cols-3 px-5 items-center">
-                                <div className="border rounded-md border-[#0f1519] p-1">
+                                <div
+                                  className={`border rounded-md border-[#0f1519] p-1 ${
+                                    s[0] > s[1]
+                                      ? "text-green-500"
+                                      : "text-red-500"
+                                  }`}
+                                >
                                   {s[0]}
                                 </div>
                                 <div>-</div>
-                                <div className="border rounded-md border-[#0f1519] p-1">
+                                <div
+                                  className={`border rounded-md border-[#0f1519] p-1 ${
+                                    s[0] < s[1]
+                                      ? "text-green-500"
+                                      : "text-red-500"
+                                  }`}
+                                >
                                   {s[1]}
                                 </div>
                               </div>
