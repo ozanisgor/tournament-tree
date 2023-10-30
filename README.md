@@ -1,41 +1,189 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align='center'>Tournament Tree</h1>
+
+<br>
+<br>
+<br>
+
+<div align="center">
+  <h3 align="center">
+    A tournament tree app to show knockout stages
+  </h3>
+</div>
+
+<br>
+<br>
+<br>
+
+![tournament_tree_gif](https://github.com/nureply/email-signature/blob/main/public/tournament-tree.gif)
+
+<br>
+<br>
+
+## Table Of Content
+
+- [About](#about)
+- [Built With](#built-with)
+- [Project Overview](#project-overview)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Project Status](#project-status)
+- [Roadmap](#roadmap)
+- [License](#license)
+
+## About
+
+This is a project that aims to create a single elimination tournament tree for sports tournament matchups.
+
+## Built With
+
+Used following resources for the project:
+
+- [![Next][Next.js]][Next-url]
+- [![React][typescript]][typescriptp-url]
+- [![Zustand][zustand]][zustand-url]
+- [![Tailwind][tailwind]][tailwind-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Project Overview
+
+The project consists of the following components:
+
+- Matchups
+- Tournament Tree
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running follow these simple steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+
+You need to have following prerequisites.
+
+- Node.js 16.14 or later
+
+### Installation
+
+_Please follow the below instructions to install and setup the tool._
+
+1. Clone the repo with HTTPS
+   ```sh
+   git clone https://github.com/ozanisgor/tournament-tree.git
+   ```
+1. Or clone the repo with SSH
+   ```sh
+   git clone git@github.com:ozanisgor/tournament-tree.git
+   ```
+1. Install NPM packages
+   ```sh
+   npm install
+   ```
+1. Run the app in development mode
+   ```sh
+   npm run dev
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Usage
+
+Prepare a JSON file in the following format:
+
+```json
+[
+  {
+    "id": 1,
+    "round": 1,
+    "match": 1,
+    "players": [
+      {
+        "id": 1,
+        "name": "TEAM A",
+        "seed": 1
+      },
+      {
+        "id": 2,
+        "name": "TEAM P",
+        "seed": 16
+      }
+    ],
+    "score": [
+      [3, 2],
+      [4, 3],
+      [5, 7]
+    ]
+  },
+  ...
+]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br>
+<br>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Get the data and pass to the `Bracket`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```js
+export default function Home({ matches }) {
+  return (
+    <div>
+      <Bracket matches={matches} />
+    </div>
+  );
+}
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+export async function getStaticProps() {
+  const matches = await getLocalData();
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  return {
+    props: { matches },
+  };
+}
+```
 
-## Learn More
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To learn more about Next.js, take a look at the following resources:
+## Project Status
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Development Stage:** Beta
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  - Project is currently in the beta phase, with most of the core features implemented and tested.
 
-## Deploy on Vercel
+- **Maintenance:** Active
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  - Actively maintaining and updating the project with bug fixes, performance enhancements, and new features.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# tournament-tree
+- **Future Plans:**
+  - Planning to improve the user interface based on user feedback.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Roadmap
+
+- [ ] Colored connector lines for the highlighted player
+- [ ] More details about matchups
+- [ ] Add images
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## License
+
+The project is licensed under the MIT License.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[typescript]: https://img.shields.io/badge/typescript-358EF1?style=for-the-badge&logo=typescript&logoColor=white
+[typescriptp-url]: https://www.typescriptlang.org/
+[tailwind]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[tailwind-url]: https://tailwindcss.com/
+[zustand]: https://img.shields.io/badge/zustand-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
+[zustand-url]: https://zustand-demo.pmnd.rs/
