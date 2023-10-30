@@ -32,10 +32,10 @@ const Player = ({
         ${winner ? "bracket-winner" : ""}
         ${highlightedPlayer === id ? "bracket-highlighted" : ""}`}
     >
-      <div title="Seed" className="bracket-player-seed">
+      {/* <div title="Seed" className="bracket-player-seed">
         {seed}
-      </div>
-      <div className="bracket-player-name">{name}</div>
+      </div> */}
+      <div className="bracket-player-name px-3">{name}</div>
       {champion && champion.id === id && (
         <Trophy color="#c9a01d" width={17} height={17} />
       )}
