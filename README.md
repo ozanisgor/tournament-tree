@@ -14,7 +14,7 @@
 <br>
 <br>
 
-![tournament_tree_gif](https://github.com/nureply/email-signature/blob/main/public/tournament-tree.gif)
+![tournament_tree_gif](https://github.com/ozanisgor/tournament-tree/blob/main/public/tournament-tree.gif)
 
 <br>
 <br>
