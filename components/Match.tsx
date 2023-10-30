@@ -54,7 +54,9 @@ export default function Match({
         animate={{ opacity: 1, y: 0, x: 0, transition: { delay: 0.1 * id } }}
         onClick={openModal}
       >
-        <div className="bracket-match-id">{id}</div>
+        <div className="bracket-match-id text-center text-xs flex flex-col">
+          Matchup <span className="text-sm"># {id}</span>
+        </div>
         <div className={`bracket-players`}>
           {players.map(({ name, seed, ...player }, index) => (
             <Player

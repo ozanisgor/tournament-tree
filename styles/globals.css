@@ -62,7 +62,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 2rem;
+    width: 4rem;
     font-weight: bold;
     color: #999;
   }
