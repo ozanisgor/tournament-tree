@@ -50,10 +50,6 @@ body {
   flex-grow: 0.5;
 }
 
-.bracket-vertical-line {
-  border-right: solid 1px #999;
-}
-
 .bracket-match {
   margin: 0.5rem 0;
   display: flex;

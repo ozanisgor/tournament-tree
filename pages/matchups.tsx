@@ -99,11 +99,19 @@ export default function Matchups({ matches }: { matches: MatchType[] }) {
                           Game {idx + 1}
                         </div>
                         <div className="col-start-2 grid grid-cols-3 items-center">
-                          <div className="border rounded-md border-[#0f1519] px-1 text-xs">
+                          <div
+                            className={`border rounded-md border-[#0f1519] px-1 text-xs ${
+                              s[0] < s[1] ? "text-red-500" : "text-green-500"
+                            }`}
+                          >
                             {s[0]}
                           </div>
                           <div className="text-xs">-</div>
-                          <div className="border rounded-md border-[#0f1519] px-1 text-xs">
+                          <div
+                            className={`border rounded-md border-[#0f1519] px-1 text-xs ${
+                              s[1] < s[0] ? "text-red-500" : "text-green-500"
+                            }`}
+                          >
                             {s[1]}
                           </div>
                         </div>
